@@ -14,3 +14,14 @@ do
   eval ${c}
 done
 
+if [ $# -eq 0 ]
+then
+  echo "にっぽにっぽにっぽ"
+  exit 0
+fi
+
+case $1 in
+  *)
+    echo "ちゃうねん"
+    ;;
+esac
