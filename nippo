@@ -21,6 +21,10 @@ then
 fi
 
 case $1 in
+  config)
+    cat ${config_file}
+    echo ""
+    ;;
   *)
     echo "ちゃうねん"
     ;;
