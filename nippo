@@ -2,11 +2,12 @@
 
 cmd_path=`which nippo`
 current_path=${cmd_path%nippo}
+config_file=${current_path}nippo.conf
 
 echo "nippo start"
 
 echo "read config..."
-config_text=`sed -e 's/:[^:\/\/]/="/g;s/$/"/g;s/ *=/=/g' ${current_path}nippo.conf`
+config_text=`sed -e 's/:[^:\/\/]/="/g;s/$/"/g;s/ *=/=/g' ${config_file}`
 config=(`echo ${config_text}`)
 for c in ${config[@]}
 do
