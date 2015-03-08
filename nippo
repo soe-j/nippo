@@ -1,5 +1,6 @@
 #!/bin/bash -eu
 
+### config ###
 cmd_path=`which nippo`
 current_path=${cmd_path%nippo}
 config_file=${current_path}nippo.conf
