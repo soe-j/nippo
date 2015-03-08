@@ -54,6 +54,11 @@ open()
   eval "${text_editor} ${dir}"
 }
 
+push()
+{
+  echo "push(pending)"
+}
+
 ### process request ###
 if [ $# -eq 0 ]
 then
@@ -79,6 +84,10 @@ case $1 in
   open)
     check_arg_num $# 2
     open ${*/open}
+    ;;
+  push)
+    check_arg_num $# 2
+    push ${*/push}
     ;;
   config)
     cat ${config_file}
