@@ -16,6 +16,17 @@ do
 done
 printf "\n"
 
+### functions ###
+
+make()
+{
+  cd ${nippo_dir}
+  mkdir -p `date +${dir_format}`
+  touch `date +${dir_format}`/${filename_format}
+
+  ### -o text_editor
+}
+
 if [ $# -eq 0 ]
 then
   echo "にっぽにっぽにっぽ"
