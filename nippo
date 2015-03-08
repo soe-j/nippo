@@ -6,13 +6,15 @@ config_file=${current_path}nippo.conf
 
 echo "nippo start"
 
-echo "read config..."
+printf "read config"
 config_text=`sed -e 's/:[^:\/\/]/="/g;s/$/"/g;s/ *=/=/g' ${config_file}`
 config=(`echo ${config_text}`)
 for c in ${config[@]}
 do
   eval ${c}
+  printf '.'
 done
+printf "\n"
 
 if [ $# -eq 0 ]
 then
