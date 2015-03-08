@@ -32,6 +32,7 @@ make()
   ### -o text_editor
 }
 
+### process request ###
 if [ $# -eq 0 ]
 then
   echo "にっぽにっぽにっぽ"
