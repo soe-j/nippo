@@ -45,6 +45,10 @@ check_arg_num()
 }
 
 case $1 in
+  make)
+    check_arg_num $# 2
+    make ${*/make}
+    ;;
   config)
     cat ${config_file}
     echo ""
