@@ -32,6 +32,28 @@ make()
   ### -o text_editor
 }
 
+open()
+{
+  case $# in
+    0)
+      dir=${nippo_dir}/`date +${dir_format}`/${filename_format}
+      ;;
+    1)
+      case $1 in
+        -d)
+          dir=${nippo_dir}
+          ;;
+        *)
+        printf "${ALERT}wrong arguments!${NORMAL}\n"
+        exit 1
+        ;;
+      esac
+      ;;
+  esac
+
+  eval "${text_editor} ${dir}"
+}
+
 ### process request ###
 if [ $# -eq 0 ]
 then
@@ -53,6 +75,10 @@ case $1 in
   make)
     check_arg_num $# 2
     make ${*/make}
+    ;;
+  open)
+    check_arg_num $# 2
+    open ${*/open}
     ;;
   config)
     cat ${config_file}
