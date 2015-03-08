@@ -1,5 +1,9 @@
 #!/bin/bash -eu
 
+### font ###
+ALERT="\e[1;31m"
+NORMAL="\e[m"
+
 ### config ###
 cmd_path=`which nippo`
 current_path=${cmd_path%nippo}
